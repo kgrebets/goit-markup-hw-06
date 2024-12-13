@@ -237,6 +237,32 @@ p {
     color: #434455;
 }
 
+@media screen and (max-width:320px) {
+    .values-list {
+        flex-direction: column;
+    }
+
+    .values-item{
+        width: 100%;
+    }
+
+    .values-item-icon-container {
+        display: none;
+    }
+
+    .values-item-header {
+        color: #2E2F42;
+        text-align: center;
+
+        font-family: Roboto;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: 0.72px;
+    }
+}
+
 /********************************/
 
 .team {
@@ -759,3 +785,5 @@ p {
     border-radius: 4px;
     margin: 0 auto;
 }
+
+/******************************************************/
