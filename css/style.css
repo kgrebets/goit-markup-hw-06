@@ -219,43 +219,96 @@ p {
 
 .values-list {
     display: flex;
-    gap: 24px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 72px;
 }
 
-.values-item {
-    width: calc((100% - 3 * 24px) / 4);
-    flex-basis: calc((100% - 72px) / 4);
+@media screen and (min-width: 768px) {
+    .values-list {
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 24px;
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    .values-list {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        gap: 24px;
+    }
+}
+
+/* .values-item {} */
+
+@media screen and (min-width: 768px) {
+    .values-item {
+        width: calc((100% - 24px) / 2);
+        flex-basis: calc((100% - 24px) / 2);
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    .values-item {
+        width: calc((100% - 3 * 24px) / 4);
+        flex-basis: calc((100% - 72px) / 4);
+    }
 }
 
 .values-item-icon-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 112px;
-    background-color: #f4f4fd;
-    border-radius: 4px;
-    border: 1px solid #8e8f99;
-    margin-bottom: 8px;
+    display: none;
 }
 
-.values-item-header,
-.team-header {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-    color: #2e2f42;
+@media screen and (min-width: 1158px) {
+    .values-item-icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 112px;
+        background-color: #f4f4fd;
+        border-radius: 4px;
+        border: 1px solid #8e8f99;
+        margin-bottom: 8px;
+    }
 }
 
 .values-item-header {
+    text-align: center;
+    font-family: Roboto;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.11;
+    letter-spacing: 0.72px;
+    color: #2e2f42;
     margin-bottom: 8px;
+    margin-top: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .values-item-header {
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    .values-item-header {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+    }
 }
 
 .values-desc {
     font-size: 16px;
-    line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5;
 }
 
 /********************************/
@@ -267,6 +320,7 @@ p {
 }
 
 .team-header {
+    font-weight: 500;
     font-size: 36px;
     line-height: 1.11;
     text-align: center;
