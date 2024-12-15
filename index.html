@@ -22,10 +22,83 @@
 </head>
 
 <body>
-    <header class="header hide">
+    <div id="mobile-menu-container" class="mobile-menu-container">
+
+        <button id="close-mobile-menu-btn" class="mobile-menu-btn">
+            <svg class="mobile-menu-btn-icon" width="8" height="8">
+                <use href="./images/icons.svg#icon-f-close"></use>
+            </svg>
+        </button>
+
+        <ul class="mobile-menu-nav">
+            <li class="mobile-menu-nav-item">
+                <a class="mobile-menu-nav-link active" href="#">Studio</a>
+            </li>
+            <li class="mobile-menu-nav-item">
+                <a class="mobile-menu-nav-link" href="#">Portfolio</a>
+            </li>
+            <li class="mobile-menu-nav-item">
+                <a class="mobile-menu-nav-link" href="#">Contacts</a>
+            </li>
+        </ul>
+
+        <ul class="mobile-menu-contacts">
+            <li class="mobile-menu-contacts-item">
+                <a class="mobile-menu-contacts-link accent" href="tel:+110001111111">
+                    +11 (000) 111-11-11
+                </a>
+            </li>
+            <li class="mobile-menu-contacts-item">
+                <a class="mobile-menu-contacts-link" href="mailto:info@devstudio.com">
+                    info@devstudio.com
+                </a>
+            </li>
+        </ul>
+
+        <ul class="team-item-icon-list">
+            <li class="team-item-icon-item">
+                <a href="http://www" class="team-item-icon-link">
+                    <svg class="team-item-icon-item-image" width="16" height="16">
+                        <use href="./images/icons.svg#icon-instagram-2"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="team-item-icon-item">
+                <a href="http://www" class="team-item-icon-link">
+                    <svg class="team-item-icon-item-image" width="16" height="16">
+                        <use href="./images/icons.svg#icon-twitter-1"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="team-item-icon-item">
+                <a href="http://www" class="team-item-icon-link">
+                    <svg class="team-item-icon-item-image" width="16" height="16">
+                        <use href="./images/icons.svg#icon-facebook-1"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="team-item-icon-item">
+                <a href="http://www" class="team-item-icon-link">
+                    <svg class="team-item-icon-item-image" width="16" height="16">
+                        <use href="./images/icons.svg#icon-linkedin-1"></use>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+    <header class="header">
         <div class="header-container container">
             <nav class="header-nav">
                 <a class="header-logo" href="./index.html">web<span class="header-logo-studio">Studio</span></a>
+
+                <button type="button" id="burger-menu-btn" class="mobile-menu-btn">
+                    <svg width="24" height="24">
+                        <use href="./images/icons.svg#icon-burger-menu"></use>
+                    </svg>
+                </button>
+
                 <ul class="header-nav-list">
                     <li><a class="header-nav-item active-nav-item" href="./index.html">Studio</a></li>
                     <li><a class="header-nav-item" href="">Portfolio</a></li>
@@ -38,6 +111,7 @@
                     <li><a class="header-address-item" href="tel:+110001111111">+11 (000) 111-11-11</a></li>
                 </ul>
             </address>
+
         </div>
     </header>
 
@@ -410,7 +484,7 @@
         </div>
     </footer>
 
-    <div class="modal-overlay"> <!-- is-open -->
+    <div id="modal-overlay" class="modal-overlay"> <!-- is-open -->
         <div class="modal">
             <button type="button" class="feedback-button-close">
                 <svg width="8" height="8" class="feedback-button-close-icon">
@@ -475,7 +549,20 @@
         </div>
     </div>
 
+    <script>
+        const button = document.getElementById('burger-menu-btn');
+        const div = document.getElementById('mobile-menu-container');
 
+        button.addEventListener('click', () => {
+            div.classList.toggle('is-open');
+        });
+
+        const button2 = document.getElementById('close-mobile-menu-btn');
+        button2.addEventListener('click', () => {
+            div.classList.toggle('is-open');
+        });
+
+    </script>
 </body>
 
 </html>
